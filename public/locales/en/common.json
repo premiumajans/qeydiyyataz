@@ -1,4 +1,5 @@
 {
+  "submit": "Submit",
   "not-found": "Page not found",
   "home-page": "Home Page",
   "invalid-value": "Invalid value",
@@ -35,7 +36,7 @@
   "readMore": "Read more",
   "Daha Cox": "Read more",
   "ourService": "Our Work Services",
-  "latestNew": "News",
+  "latestNew": "Blog",
   "navhome": "Home",
   "navservice": "Services",
   "navportfolio": "Portfolio",

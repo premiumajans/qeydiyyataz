@@ -215,8 +215,8 @@ function Index({servicesContactInfo}: { servicesContactInfo: servicesContactInfo
                                                         <span className="spin"></span>
                                                     </div>
 
-                                                    <div className="input input-animate">
-                                                    <input
+                                                    <div className="input textarea input-animate">
+                                                    <textarea
                                                         {...register("message")}
                                                         name="message"
                                                         id="message"
@@ -224,7 +224,7 @@ function Index({servicesContactInfo}: { servicesContactInfo: servicesContactInfo
                                                         placeholder={t('message').toString()}
                                                         className={`form-control ${errors.message ? "is-invalid" : ""
                                                         }`}
-                                                    ></input>
+                                                    ></textarea>
                                                         <span className="spin"></span>
                                                         {errors.name ? (
                                                             <div

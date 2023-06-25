@@ -99,7 +99,7 @@ function Footer() {
                             {servicesContactInfo?.map(item => {
                                 if (item.title === 'facebook' || item.title === 'whatsapp' || item.title === 'instagram') {
                                     return <li key={item.id}>
-                                        <Link href={item.link}>
+                                        <Link target={'_blank'} href={item.link}>
                                             <i style={{fontSize: '18px'}} className={"fab fa-" + item.title}></i>
                                         </Link>
                                     </li>

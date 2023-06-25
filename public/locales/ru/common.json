@@ -1,4 +1,5 @@
 {
+  "submit": "Подтвердить",
   "not-found": "Страница не найдена",
   "home-page": "Главная страница",
   "invalid-value": "Недопустимое значение",
@@ -44,7 +45,7 @@
   "ourBlog": "Наш блог",
   "post-title": "Standard size of business agency kal Consulat Latest Management.",
   "ourService": "Наши услуги",
-  "latestNew": "Новости",
+  "latestNew": "Блог",
   "footertitle": "Свяжитесь с нами...",
   "footerspan": "Контакт 24/7",
   "footerexplorelink": "Быстрый контакт",
