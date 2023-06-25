@@ -23,7 +23,7 @@ const CustomLanguageDropdown = ({direction, ...args}: { direction: Direction }) 
                 background: "none",
                 color: 'black',
                 border: 'none'
-            }} caret><i className={'fi fi-' + (i18n.language === 'en' ? 'us' : i18n.language)}></i> {i18n.language.toUpperCase()}</DropdownToggle>
+            }} caret><i className={'fi fi-' + (i18n.language === 'en' ? 'us' : i18n.language)}></i> {i18n.language?.toUpperCase()}</DropdownToggle>
             <DropdownMenu {...args}>
                 <DropdownItem onClick={(e) => handleChangeLanguage('az')}  ><i className={'fi fi-az'}></i> Azərbaycan </DropdownItem>
                 <DropdownItem onClick={(e) => handleChangeLanguage('en')} ><i className={'fi fi-us'}></i> English </DropdownItem>

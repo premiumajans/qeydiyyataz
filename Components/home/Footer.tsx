@@ -1,22 +1,15 @@
 import Link from 'next/link'
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {useTranslation} from 'next-i18next'
 import Image from "next/image";
-import {servicesContactInfo} from "@/interfaces/generalResponses";
+import {useSelector} from "react-redux";
+import {getSetings} from "@/Store/Slices/User";
 
 
 function Footer() {
     const {i18n, t} = useTranslation('common')
 
-    const [servicesContactInfo, setServicesContactInfo] = useState<servicesContactInfo[]>([])
-
-
-    useEffect(() => {
-        fetch("https://admin.qeydiyyat.az/api/contact-info")
-            .then(res => res.json())
-            .then(res => setServicesContactInfo(res))
-            .catch(err => console.log(err))
-    }, [])
+    const servicesContactInfo = useSelector(getSetings)
 
 
     return (
@@ -50,8 +43,6 @@ function Footer() {
                                     </div>
                                 </div>
                             </div>
-
-
 
 
                             <div className="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-6 col">
@@ -109,7 +100,7 @@ function Footer() {
                                 if (item.title === 'facebook' || item.title === 'whatsapp' || item.title === 'instagram') {
                                     return <li key={item.id}>
                                         <Link href={item.link}>
-                                            <i style={{fontSize:'18px'}} className={"fab fa-" + item.title}></i>
+                                            <i style={{fontSize: '18px'}} className={"fab fa-" + item.title}></i>
                                         </Link>
                                     </li>
                                 }

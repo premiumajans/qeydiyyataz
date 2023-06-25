@@ -1,32 +1,21 @@
-import { SuccesRes } from "@/interfaces/authResponses";
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
+import {servicesContactInfo} from "@/interfaces/generalResponses";
 
 const User = createSlice({
-  initialState: {
-    data:{
-      authorisation:{
-        token:'',
-        type:''
-      },
-      status:'',
-      user:{
-        id:0,
-        name:'',
-        profile_photo_url:''
-      }
-    }  as SuccesRes
-  },
-  name: "User",
-  reducers: {
-    setUser: (state,action) => void(state.data = action.payload)
-  },
+    initialState: {
+        settings: [] as servicesContactInfo[]
+    },
+    name: "User",
+    reducers: {
+        setSettings: (state, action) => void (state.settings = action.payload)
+    },
 });
 
 export default User.reducer;
 
-export const { setUser } = User.actions;
+export const {setSettings} = User.actions;
 
-export const getUser = (state:any) => (state.User.data as SuccesRes)
+export const getSetings = (state: any) => (state.User.settings as servicesContactInfo[])
 
 
 

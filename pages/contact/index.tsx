@@ -257,11 +257,9 @@ function Index({servicesContactInfo}: { servicesContactInfo: servicesContactInfo
 
                     <div className="gmap-outline map-grayscle" style={{height: "50%"}}>
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6309.495304446196!2d-122.43885472228101!3d37.74906395235639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e12a1d66d03%3A0xb8c905ae4e81369b!2sQ-Architecture!5e0!3m2!1sen!2sin!4v1623689156327!5m2!1sen!2sin"
-                            style={{border: "0"}}
-                            allowFullScreen={true}
-                            loading="lazy"
-                        ></iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1947.31406146628!2d50.04011644017404!3d40.422994990796866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4030613ed16b9d29%3A0xcf136a8ba933f75a!2zMS1jaSBkw7ZuZ8mZLCBCYWvEsQ!5e0!3m2!1sru!2saz!4v1687692953466!5m2!1sru!2saz"
+                            width="600" height="450"  loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

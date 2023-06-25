@@ -1,4 +1,6 @@
 {
+  "not-found": "Page not found",
+  "home-page": "Home Page",
   "invalid-value": "Invalid value",
   "free": "This domain is available",
   "bought": "This domain has already been purchased",

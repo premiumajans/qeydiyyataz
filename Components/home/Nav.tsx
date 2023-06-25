@@ -3,21 +3,17 @@ import React, {useEffect, useState} from 'react'
 import {useTranslation} from 'next-i18next';
 import dynamic from 'next/dynamic';
 import CustomLanguageDropdown from "@/Components/CustomLanguageDropdown/CustomLanguageDropdown";
-import {servicesContactInfo} from "@/interfaces/generalResponses";
+import {useSelector} from "react-redux";
+import {getSetings} from "@/Store/Slices/User";
 
 
 function Nav() {
     const {i18n, t} = useTranslation('common')
     const [menu, setMenu] = useState(false)
-    const [servicesContactInfo, setServicesContactInfo] = useState<servicesContactInfo[]>([])
-
     const [scrolled, setScrolled] = useState(false)
+    const servicesContactInfo = useSelector(getSetings)
 
     useEffect(() => {
-        fetch("https://admin.qeydiyyat.az/api/contact-info")
-            .then(res => res.json())
-            .then(res => setServicesContactInfo(res))
-            .catch(err => console.log(err))
         const handleSubmit = (e: any) => {
             if (e.target.scrollingElement.scrollTop > 150) {
                 setScrolled(true)
@@ -34,7 +30,6 @@ function Nav() {
             window.removeEventListener('scroll', handleSubmit)
         }
     }, [])
-
 
 
     return <>
@@ -66,14 +61,13 @@ function Nav() {
                                                 if (item.title === 'facebook' || item.title === 'whatsapp' || item.title === 'instagram') {
                                                     return <li key={item.id}>
                                                         <Link href={item.link}>
-                                                            <i style={{fontSize:'16px'}} className={"fab fa-" + item.title}></i>
+                                                            <i style={{fontSize: '16px'}}
+                                                               className={"fab fa-" + item.title}></i>
                                                         </Link>
                                                     </li>
                                                 }
                                                 return null
                                             })}
-
-
 
 
                                             <li className="field-lang ml-3 lang">

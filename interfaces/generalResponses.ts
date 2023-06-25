@@ -209,14 +209,13 @@ interface serviceTranslationWhyChoose {
 }
 
 interface serviceTranslationTeam {
-    alt: "Molestiae excepteur";
-    content: string;
-    id: number;
-    locale: string;
-    service_id: number;
-    name: string;
-    img: string;
-    title: string;
+    "id": number,
+    "blog_id": number,
+    "title": string,
+    "content": string,
+    "slug": string,
+    "alt": string,
+    "locale": string
 }
 
 interface serviceTranslationCompanyLogo {

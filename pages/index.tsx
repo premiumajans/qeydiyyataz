@@ -15,6 +15,7 @@ import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 const Slider = dynamic(() => import('react-slick'), {ssr: false})
 const CountUp = dynamic(() => import('react-countup'), {ssr: false})
+
 function index({
                    service,
                    servicesWhyChoose,
@@ -31,8 +32,6 @@ function index({
     const [modal, setModal] = useState(false);
 
     const toggle = () => setModal(!modal);
-
-
 
 
     const settings1 = {
@@ -96,7 +95,7 @@ function index({
                 breakpoint: 992,
                 settings: {
                     arrows: false,
-                    dots:true,
+                    dots: true,
                 }
             },
         ]
@@ -165,7 +164,14 @@ function index({
                         {servicesSlider.map(item => {
                             return <div data-aos='fade-up' data-aos-duration="700" key={item.id}
                                         className="sx-bnr-1-wrap swiper-slide overlay-overlay">
-                                <div className={'image-container'} style={{opacity: 0.5,backgroundColor:'black',position: 'absolute', width: '100%', height:'100%', background:`url(https://admin.qeydiyyat.az/${item.image}) 100% / cover no-repeat`}} ></div>
+                                <div className={'image-container'} style={{
+                                    opacity: 0.5,
+                                    backgroundColor: 'black',
+                                    position: 'absolute',
+                                    width: '100%',
+                                    height: '100%',
+                                    background: `url(https://admin.qeydiyyat.az/${item.image}) 100% / cover no-repeat`
+                                }}></div>
 
                                 <div className="container">
                                     <div data-aos="fade-right"
@@ -174,10 +180,10 @@ function index({
                                          data-aos-duration="500"
                                          data-aos-delay="700" style={{
                                         position: 'absolute',
-                                        width:'70%',
+                                        width: '70%',
                                         top: '50%',
                                         left: '50%',
-                                        textAlign:'left',
+                                        textAlign: 'left',
                                         transform: 'translate(-50%,-50%)'
                                     }}>
                                         <h2 className="sx-bnr-1-large-title">{item.translations.find(item => item.locale == i18n.language)?.title}</h2>
@@ -264,25 +270,28 @@ function index({
                         <div className="section-content">
 
 
-
                             <div className="counter-blocks">
                                 <div className="row when-item-four">
-                                        <div className='d-flex flex-wrap'>
-                                            {( statistic.map(item => {
-                                                        return <div key={item.id} className="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                                                            <div className="sx-count">
-                                                                <h2 className="sx-title">
-                                                                    <span className="sx-cont-before">+</span>
+                                    <div className='d-flex flex-wrap'>
+                                        {(statistic.map(item => {
+                                                return <div key={item.id}
+                                                            className="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                                    <div className="sx-count">
+                                                        <h2 className="sx-title">
+                                                            <span className="sx-cont-before">+</span>
 
-                                                                    <CountUp data-aos='fade-up' data-aos-duration="700" enableScrollSpy scrollSpyOnce start={0} end={item.number} duration={2} />
-                                                                    <span className="sx-cont-after"></span>
-                                                                </h2>
-                                                                <div className="sx-count-info">{item?.translations.find(item => item.locale === i18n.language)?.title}</div>
-                                                            </div>
-                                                        </div>
-                                                    })
-                                            )}
-                                        </div>
+                                                            <CountUp data-aos='fade-up' data-aos-duration="700"
+                                                                     enableScrollSpy scrollSpyOnce start={0}
+                                                                     end={item.number} duration={2}/>
+                                                            <span className="sx-cont-after"></span>
+                                                        </h2>
+                                                        <div
+                                                            className="sx-count-info">{item?.translations.find(item => item.locale === i18n.language)?.title}</div>
+                                                    </div>
+                                                </div>
+                                            })
+                                        )}
+                                    </div>
                                 </div>
                             </div>
 
@@ -298,7 +307,7 @@ function index({
 
 
                         <div data-aos='fade-up' data-aos-duration="700" className="section-head center">
-                            <div  className="sx-head-l-title">
+                            <div className="sx-head-l-title">
                                 <h2 className="sx-title">{t("our-work-service")}</h2>
                             </div>
                         </div>
@@ -307,7 +316,8 @@ function index({
                             <div className="sx-icon-bx-wrap">
                                 <div className="row">
                                     {servicesWhyChoose.map(item => {
-                                        return <div data-aos='fade-up' data-aos-duration="700" key={item.id} className="col-lg-4 col-md-6 wow fadeInDown my-3"
+                                        return <div data-aos='fade-up' data-aos-duration="700" key={item.id}
+                                                    className="col-lg-4 col-md-6 wow fadeInDown my-3"
                                                     data-wow-duration="1000ms">
                                             <div style={{height: '100%'}} onClick={() => setServiceDetail(item)}
                                                  data-toggle="modal"
@@ -349,7 +359,8 @@ function index({
                         </div>
 
 
-                        <div id="flexy" className={"d-flex justify-content-center " + (showMonthly ? 'show-monthly' : '')}>
+                        <div id="flexy"
+                             className={"d-flex justify-content-center " + (showMonthly ? 'show-monthly' : '')}>
                             {servicesPricing.map(item => {
                                 return <div data-aos='fade-up' data-aos-duration="700" key={item.id}
                                             className={"price-box  " + (item.title === "Orta" ? 'purple' : '')}>
@@ -397,7 +408,8 @@ function index({
                                     <Slider {...settings1}>
                                         {servicesCompanyLogo.map(item => {
                                             return <div key={item.id}>
-                                                <Link href={item.link}> <Companylogo src={`https://admin.qeydiyyat.az/${item.image}`}/></Link>
+                                                <Link href={item.link}> <Companylogo
+                                                    src={`https://admin.qeydiyyat.az/${item.image}`}/></Link>
                                             </div>
                                         })}
                                     </Slider>
@@ -431,7 +443,8 @@ function index({
 
                                 {servicesCarouselBlog?.length > 0 && servicesCarouselBlog?.map(item => {
                                     const currentTime = new Date(item.created_at)
-                                    return <div key={item.id}>
+                                    return <Link key={item.id} href={`/blog/${item.id}`}>
+
                                         <div className="item p-3">
 
                                             <div className="sx-latest-post-st-1">
@@ -446,8 +459,10 @@ function index({
                                                     <div className="sx-post-meta ">
                                                         <ul>
 
-                                                            <li className="post-date"><Link href="/blogdetail">
-                                                                <i className="fa fa-calendar"></i> {currentTime.toLocaleDateString('fr-CH')}</Link>
+                                                            <li className="post-date"><Link
+                                                                href={`/blog/${item.id}`}>
+                                                                <i className="fa fa-calendar"></i> {currentTime.toLocaleDateString('fr-CH')}
+                                                            </Link>
                                                             </li>
 
                                                         </ul>
@@ -455,11 +470,11 @@ function index({
                                                     <div className="sx-post-title ">
                                                         <h4 className={item.translations.find(item => item.locale == i18n.language)?.title}>
                                                             <Link
-                                                                href="/blogdetail">{item.translations.find(item => item.locale == i18n.language)?.title}</Link>
+                                                                href={`/blog/${item.id}`}>{item.translations.find(item => item.locale == i18n.language)?.title}</Link>
                                                         </h4>
                                                     </div>
                                                     <div className="sx-post-readmore">
-                                                        <Link href="/blogdetail" title="READ MORE" rel="bookmark"
+                                                        <Link href={`/blog/${item.id}`} title="READ MORE" rel="bookmark"
                                                               className="site-button icon"><i
                                                             className="fa  fa-long-arrow-right"></i>{t("readMore")}
                                                         </Link>
@@ -468,7 +483,8 @@ function index({
                                             </div>
 
                                         </div>
-                                    </div>
+
+                                    </Link>
 
 
                                 })}
@@ -490,7 +506,7 @@ function index({
 
 export default index
 
-export async function getServerSideProps(context:any) {
+export async function getServerSideProps(context: any) {
     const servicesCarouselPortfolio = await fetch('https://admin.qeydiyyat.az/api/portfolio').then(res => res.json())
     const servicesCarouselBlog = await fetch('https://admin.qeydiyyat.az/api/blog').then(res => res.json())
     const servicesCompanyLogo = await fetch('https://admin.qeydiyyat.az/api/partner').then(res => res.json())
