@@ -75,7 +75,9 @@ function index({domains}: { domains: domainItem[] }) {
                                             }`}
                                         >
                                             {domains.map(item => {
-                                                return <option value={item.title}>{item.title}</option>
+                                                if(item.title !== '.az') {
+                                                    return <option value={item.title}>{item.title}</option>
+                                                }
                                             })}
                                         </select>
                                     </FormGroup>
