@@ -237,10 +237,10 @@ function Index({servicesContactInfo}: { servicesContactInfo: servicesContactInfo
                                                     </div>
 
                                                     <div data-aos='fade-left' data-aos-duration="700"
-                                                         className="sx-btn-center text-center p-t10">
+                                                         className="sx-btn-center text-center ">
                                                         <button
                                                             type="submit"
-                                                            className="site-button sx-btn-primary icon sx-btn-lg mt-3"
+                                                            className="site-button sx-btn-primary icon sx-btn-lg"
                                                         >
                                                             <i className="fa  fa-long-arrow-right"></i>
                                                             {t('send-message')}
